@@ -1,0 +1,12 @@
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    a {
+        img {
+            width: 23px;
+            height: 23px;
+        }
+    }
+}
