@@ -16,8 +16,46 @@ code {
   box-sizing: border-box;
 }
 
+:root {
+  --color_rgb: #000;
+  --color_hsl: 250, 50%, 50%;
+}
+
 input {
   background: none;
   border: none;
   outline: none;
+}
+
+.div {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  margin: 0;
+  padding: 0;
 }
