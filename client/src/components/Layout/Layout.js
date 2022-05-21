@@ -1,13 +1,18 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import HeadDefault from "../reusable/HeadDefault/HeadDefault";
+import HeadNavigation from "../reusable/HeadNavigation/HeadNavigation";
 import NavBar from "../reusable/NavBar/NavBar";
-import styles from "./Layout.module.scss"
+import styles from "./Layout.module.scss";
 
 const Layout = () => {
+
+  const location = useLocation();
+  const nav = location.pathname === '/store';
+
   return (
     <>
-      <HeadDefault />
+      {nav ? <HeadDefault /> : <HeadNavigation />}
       <div className={styles.layout}>
         <Outlet />
       </div>

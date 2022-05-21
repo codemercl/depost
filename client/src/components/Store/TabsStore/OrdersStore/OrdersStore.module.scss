@@ -2,6 +2,10 @@
   margin-top: 20px;
   overflow-y: scroll;
   height: calc(100vh - 290px);
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 }
 
 .column {
@@ -34,11 +38,12 @@
       text-align: left;
       .preview {
         color: rgb(158, 158, 158);
-        font-size: 13px;
+        font-size: 14px;
       }
       .value {
         margin-top: 5px;
         .line {
+          font-size: 15px;
           position: relative;
           &::after {
             content: "";

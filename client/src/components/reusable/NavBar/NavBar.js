@@ -7,7 +7,12 @@ import folder from "../../../assets/navigation/folder-icon.svg";
 import box from "../../../assets/navigation/box-icon.svg";
 import CustomLink from "../CustomLink/CustomLink";
 
+import { useLocation } from "react-router-dom";
+
 const NavBar = () => {
+  const location = useLocation();
+  const done = location.pathname === "/detail";
+
   return (
     <div className={styles.navbar}>
       <CustomLink to="/store">
@@ -16,9 +21,11 @@ const NavBar = () => {
       <CustomLink to="/box">
         <img src={box}></img>
       </CustomLink>
-      <CustomLink to="/shipment">
-        <img src={shipment}></img>
-      </CustomLink>
+      <div className={styles.shipment}>
+        <CustomLink to="/shipment">
+          <img src={shipment}></img>
+        </CustomLink>
+      </div>
       <CustomLink to="/settings">
         <img src={settings}></img>
       </CustomLink>

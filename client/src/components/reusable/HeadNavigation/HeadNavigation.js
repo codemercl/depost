@@ -1,14 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import arrow from "../../../assets/icon/arrow-icon.svg";
 import styles from "./HeadNavigation.module.scss";
-import { Link } from "react-router-dom";
 
 const HeadNavigation = () => {
+
+  const navigate = useNavigate();
+  const goBack = () => navigate(-1)
+
   return (
     <div className={styles.head}>
-      <Link to="/">
+      <button onClick={goBack}>
         <img src={arrow} alt="arrow" />
-      </Link>
+      </button>
       <p>Parcel information</p>
     </div>
   );
