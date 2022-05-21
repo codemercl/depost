@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="mobile">
       <Routes>
