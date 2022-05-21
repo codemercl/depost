@@ -1,11 +1,9 @@
-.Orders {
+.orders {
   margin-top: 20px;
   overflow-y: scroll;
   height: calc(100vh - 290px);
-  a {
-    text-decoration: none;
-    color: #000;
-  }
+  text-decoration: none;
+  color: #000;
 }
 
 .column {

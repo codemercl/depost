@@ -8,6 +8,17 @@ import styles from "./TabsStore.module.scss";
 
 const TabsStore = () => {
   const [selectedTab, setSelectedTab] = React.useState("1");
+  const [order, setOrder] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("https://6288f79e10e93797c1611bc6.mockapi.io/order")
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setOrder(json);
+      });
+  }, []);
 
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
@@ -26,11 +37,15 @@ const TabsStore = () => {
           <Tab label="Archival" value="2"></Tab>
         </TabList>
         <TabPanel value="1" sx={{ p: 0 }}>
-          <OrdersStore />
+          {order.map((item) => (
+            <OrdersStore
+              value={item.text}
+              date={item.date}
+              number={item.number}
+            />
+          ))}
         </TabPanel>
-        <TabPanel value="2" sx={{ p: 0 }}>
-          <OrdersStore />
-        </TabPanel>
+        <TabPanel value="2" sx={{ p: 0 }}></TabPanel>
       </TabContext>
     </div>
   );
