@@ -5,6 +5,7 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import OrdersStore from "./OrdersStore/OrdersStore";
 import styles from "./TabsStore.module.scss";
+import searchList from "../../../assets/icon/search-list.svg";
 
 const TabsStore = () => {
   const [selectedTab, setSelectedTab] = React.useState("1");
@@ -37,13 +38,25 @@ const TabsStore = () => {
           <Tab label="Archival" value="2"></Tab>
         </TabList>
         <TabPanel value="1" sx={{ p: 0 }}>
-          {order.map((item) => (
-            <OrdersStore
-              value={item.text}
-              date={item.date}
-              number={item.number}
-            />
-          ))}
+          {order.length > 0 ? (
+            order.map((item) => (
+              <OrdersStore
+                value={item.text}
+                date={item.date}
+                number={item.number}
+              />
+            ))
+          ) : (
+            <div className={styles.noData}>
+              <div className={styles.noDataMiddle}>
+                <img src={searchList}></img>
+                <p className={styles.searchList}>Empty list yet</p>
+                <p className={styles.searchText}>
+                  when you receive the parcel, it will appear in the list
+                </p>
+              </div>
+            </div>
+          )}
         </TabPanel>
         <TabPanel value="2" sx={{ p: 0 }}></TabPanel>
       </TabContext>
