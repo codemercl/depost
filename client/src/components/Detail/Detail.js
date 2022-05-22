@@ -2,10 +2,17 @@ import React from "react";
 import styles from "./Detail.module.scss";
 import circle from "../../assets/icon/circle.svg";
 import car from "../../assets/icon/car.svg";
+import { motion } from "framer-motion";
 
-const Detail = () => {
+const Detail = ({ PageTransition }) => {
   return (
-    <div className={styles.detail}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={PageTransition}
+      className={styles.detail}
+    >
       <div className={styles.id}>
         <p>20 2020 2020</p>
         <button>Copy</button>
@@ -71,7 +78,7 @@ const Detail = () => {
           <button>Document</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

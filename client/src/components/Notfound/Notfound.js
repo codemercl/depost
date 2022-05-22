@@ -1,11 +1,18 @@
 import React from "react";
 import styles from "./Notfound.module.scss";
+import { motion } from "framer-motion";
 
-const Notfound = () => {
+const Notfound = ({ PageTransition }) => {
   return (
-    <div className={styles.navbar}>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={PageTransition}
+      className={styles.navbar}
+    >
       Page nor found
-    </div>
+    </motion.div>
   );
 };
 

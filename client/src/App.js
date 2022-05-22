@@ -6,18 +6,18 @@ import Layout from "./components/Layout/Layout";
 import Login from "./components/Login/Login";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-// import { PageTransition } from "./hook/PageTransition"
+import { PageTransition } from "./hook/PageTransition"
 
 function App() {
   return (
     <div className="mobile">
       <AnimatePresence>
         <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<Login PageTransition={PageTransition}/>} />
           <Route element={<Layout />}>
-            <Route exact path="/store" element={<Store />} />
-            <Route exact path="/detail" element={<Detail />} />
-            <Route exact path="*" element={<Notfound />} />
+            <Route exact path="/store" element={<Store PageTransition={PageTransition} />} />
+            <Route exact path="/detail" element={<Detail PageTransition={PageTransition} />} />
+            <Route exact path="*" element={<Notfound PageTransition={PageTransition} />} />
           </Route>
         </Routes>
       </AnimatePresence>
