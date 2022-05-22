@@ -7,7 +7,7 @@ import OrdersStore from "./OrdersStore/OrdersStore";
 import styles from "./TabsStore.module.scss";
 import searchList from "../../../assets/icon/search-list.svg";
 
-const TabsStore = ({search}) => {
+const TabsStore = ({ search }) => {
   const [selectedTab, setSelectedTab] = React.useState("1");
   const [order, setOrder] = React.useState([]);
 
@@ -29,7 +29,6 @@ const TabsStore = ({search}) => {
       <TabContext value={selectedTab}>
         <TabList
           variant="fullWidth"
-          textColor="#000"
           onChange={handleChange}
           aria-label="tab API tabs exxample"
           sx={{ borderBottom: 1, borderColor: "divider" }}
@@ -38,21 +37,33 @@ const TabsStore = ({search}) => {
           <Tab label="Archival" value="2"></Tab>
         </TabList>
         <TabPanel value="1" sx={{ p: 0 }}>
-          {order
-            .filter((val) => {
-              if (search == "") {
-                return val;
-              } else if (val.number.includes(search)) {
-                return val;
-              }
-            })
-            .map((item) => (
-              <OrdersStore
-                value={item.text}
-                date={item.date}
-                number={item.number}
-              />
-            ))}
+          {order.length ? (
+            order
+              .filter((val) => {
+                if (search == "") {
+                  return val;
+                } else if (val.number.includes(search)) {
+                  return val;
+                }
+              })
+              .map((item) => (
+                <OrdersStore
+                  value={item.text}
+                  date={item.date}
+                  number={item.number}
+                />
+              ))
+          ) : (
+            <div className={styles.noData}>
+              <div className={styles.noDataMiddle}>
+                <img src={searchList}></img>
+                <p className={styles.searchList}>Empty list yet</p>
+                <p className={styles.searchText}>
+                  when you receive the parcel, it will appear in the list
+                </p>
+              </div>
+            </div>
+          )}
         </TabPanel>
         <TabPanel value="2" sx={{ p: 0 }}></TabPanel>
       </TabContext>
