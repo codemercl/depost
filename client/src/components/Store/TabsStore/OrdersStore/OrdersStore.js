@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./OrdersStore.module.scss";
 import { Link } from "react-router-dom";
 
-const OrdersStore = ({ value, date, number }) => {
+const OrdersStore = ({ text, date, number }) => {
   return (
     <Link className={styles.orders} to="/detail">
       <div className={styles.column}>
@@ -13,7 +13,7 @@ const OrdersStore = ({ value, date, number }) => {
         <div className={styles.body}>
           <div className={styles.group}>
             <p className={styles.preview}>Arives in</p>
-            <p className={styles.value}>{value}</p>
+            <p className={styles.value}>{text}</p>
           </div>
           <div className={styles.group}>
             <p className={styles.preview}>Expected to</p>

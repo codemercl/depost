@@ -13,7 +13,7 @@ const HeadNavigation = () => {
       <button onClick={goBack}>
         <img src={arrow} alt="arrow" />
       </button>
-      <p>Parcel information</p>
+      <p>Come back</p>
     </div>
   );
 };
