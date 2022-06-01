@@ -6,7 +6,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import OrdersStore from "./OrdersStore/OrdersStore";
 import OrderList from "../../reusable/PlaceHolder/OrderList";
 import styles from "./TabsStore.module.scss";
-import searchList from "../../../assets/icon/search-list.svg";
+import searchIcon from "../../../assets/icon/search-list.svg";
 
 const TabsStore = ({ search }) => {
   const [selectedTab, setSelectedTab] = React.useState("1");
@@ -42,7 +42,12 @@ const TabsStore = ({ search }) => {
         <TabPanel value="1" sx={{ p: 0 }}>
           {isLoading
             ? [...new Array(4)].map((_, index) => (
-                <OrderList style={{ marginTop: "10px" }} key={index} />
+                <OrderList
+                  width="371px"
+                  height="130px"
+                  style={{ marginTop: "10px" }}
+                  key={index}
+                />
               ))
             : order
                 .filter((val) => {
@@ -53,6 +58,20 @@ const TabsStore = ({ search }) => {
                   }
                 })
                 .map((item) => <OrdersStore {...item} />)}
+          {order <= 0 && (
+            <div className={styles.noData}>
+              <div className={styles.noDataMiddle}>
+                <img src={searchIcon} alt="search-icon"></img>
+                <p className={styles.searchList}>
+                  You don't have any packages yet
+                </p>
+                <p className={styles.searchText}>
+                  when the parcel reaches the warehouse you will get access to
+                  the management
+                </p>
+              </div>
+            </div>
+          )}
         </TabPanel>
         <TabPanel value="2" sx={{ p: 0 }}></TabPanel>
       </TabContext>
