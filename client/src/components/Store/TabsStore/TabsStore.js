@@ -57,7 +57,7 @@ const TabsStore = ({ search }) => {
                     return val;
                   }
                 })
-                .map((item) => <OrdersStore {...item} />)}
+                .map((item, index) => <OrdersStore key={index} {...item} />)}
           {order <= 0 && (
             <div className={styles.noData}>
               <div className={styles.noDataMiddle}>

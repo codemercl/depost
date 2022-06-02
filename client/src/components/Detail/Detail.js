@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState, setState} from "react";
 import styles from "./Detail.module.scss";
 import circle from "../../assets/icon/circle.svg";
 import car from "../../assets/icon/car.svg";
 import { motion } from "framer-motion";
+import Modal from "../Modal/Modal";
+import img1 from "../../assets/navigation/store-icon.svg";
 
 const Detail = ({ PageTransition }) => {
   const [detail, setDetail] = React.useState([]);
@@ -16,6 +18,8 @@ const Detail = ({ PageTransition }) => {
         setDetail(json);
       });
   }, []);
+
+  const [modalActive, setModalActive] = useState(false);
 
   return (
     <>
@@ -87,8 +91,11 @@ const Detail = ({ PageTransition }) => {
           <div className={styles.package}>
             <p className={styles.subtitle}>Package contents</p>
             <div className={styles.packageButton}>
-              <button>Parcel</button>
+              <button onClick={() => setModalActive(true)}>Parcel</button>
               <button>Document</button>
+              <Modal active={modalActive} setActive={setModalActive}>
+                <img src={img1} alt="img" />
+              </Modal>
             </div>
           </div>
         </motion.div>
