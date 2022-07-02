@@ -1,6 +1,5 @@
 import "./App.scss";
 import Store from "./components/Store/Store";
-import Detail from "./components/Detail/Detail";
 import Notfound from "./components/Notfound/Notfound";
 import Layout from "./components/Layout/Layout";
 import Login from "./components/Login/Login";
@@ -16,7 +15,6 @@ function App() {
         <Route exact path="/" element={<Login PageTransition={PageTransition}/>} />
           <Route element={<Layout />}>
             <Route exact path="/store" element={<Store PageTransition={PageTransition} />} />
-            <Route exact path="/detail" element={<Detail PageTransition={PageTransition} />} />
             <Route exact path="*" element={<Notfound PageTransition={PageTransition} />} />
           </Route>
         </Routes>

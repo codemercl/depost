@@ -4,7 +4,7 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import OrdersStore from "./OrdersStore/OrdersStore";
-import OrderList from "../../reusable/PlaceHolder/OrderList";
+import PlaceHolder from "../../reusable/PlaceHolder/OrderList";
 import styles from "./TabsStore.module.scss";
 import searchIcon from "../../../assets/icon/search-list.svg";
 
@@ -42,7 +42,7 @@ const TabsStore = ({ search }) => {
         <TabPanel value="1" sx={{ p: 0 }}>
           {isLoading
             ? [...new Array(4)].map((_, index) => (
-                <OrderList
+                <PlaceHolder
                   width="371px"
                   height="130px"
                   style={{ marginTop: "10px" }}

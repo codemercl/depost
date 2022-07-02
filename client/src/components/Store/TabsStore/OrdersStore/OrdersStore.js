@@ -1,30 +1,31 @@
 import React from "react";
 import styles from "./OrdersStore.module.scss";
+
 import { Link } from "react-router-dom";
 
-const OrdersStore = ({ text, date, number, from }) => {
+const OrdersStore = ({from }) => {
 
   return (
-    <Link className={styles.orders} to="/detail">
+    <div className={styles.orders}>
       <div className={styles.column}>
         <div className={styles.head}>
-          <h1>{number}</h1>
-          <p className={from ? `${styles.from}` : `${styles.to}`}>{from ? 'To me' : 'From'}</p>
+          <h1>20 2020 2022</h1>
+          <p className={from ? `${styles.from}` : `${styles.to}`}>{from ? 'from me' : 'to me'}</p>
         </div>
         <div className={styles.body}>
           <div className={styles.group}>
             <p className={styles.preview}>Arives in</p>
-            <p className={styles.value}>{text}</p>
+            <p className={styles.value}>June 11, 2022 5:34 PM</p>
           </div>
           <div className={styles.group}>
-            <p className={styles.preview}>Expected to</p>
+            <p className={styles.preview}>Current state</p>
             <p className={styles.value}>
-              <div className={styles.line}>{date}</div>
+              <div className={styles.line}>Stored packed</div>
             </p>
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

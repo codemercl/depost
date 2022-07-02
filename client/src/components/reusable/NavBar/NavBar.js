@@ -21,11 +21,6 @@ const NavBar = () => {
       <CustomLink to="/box">
         <img src={box}></img>
       </CustomLink>
-      <div className={styles.shipment}>
-        <CustomLink to="/shipment">
-          <img src={shipment}></img>
-        </CustomLink>
-      </div>
       <CustomLink to="/settings">
         <img src={settings}></img>
       </CustomLink>
