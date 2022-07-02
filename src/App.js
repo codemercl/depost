@@ -12,7 +12,7 @@ function App() {
     <div className="mobile">
       <AnimatePresence>
         <Routes>
-        <Route exact path="/" element={<Login PageTransition={PageTransition}/>} />
+        <Route exact path="/board" element={<Login PageTransition={PageTransition}/>} />
           <Route element={<Layout />}>
             <Route exact path="/store" element={<Store PageTransition={PageTransition} />} />
             <Route exact path="*" element={<Notfound PageTransition={PageTransition} />} />
