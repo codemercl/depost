@@ -4,7 +4,7 @@ import Notfound from "./components/Notfound/Notfound";
 import Layout from "./components/Layout/Layout";
 import Login from "./components/Login/Login";
 import { Routes, Route } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./hook/PageTransition"
 
 function App() {

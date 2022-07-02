@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./OrdersStore.module.scss";
 
-import { Link } from "react-router-dom";
-
 const OrdersStore = ({from }) => {
 
   return (

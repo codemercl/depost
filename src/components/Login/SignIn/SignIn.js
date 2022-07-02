@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./SignIn.module.scss";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -14,9 +15,9 @@ const SignIn = () => {
             <input type="checkbox" name="box" id="box" />
             <p>Remember me</p>
           </div>
-          <a href="#" className={styles.forgot}>
+          <Link to="#" className={styles.forgot}>
             Forgot password
-          </a>
+          </Link>
         </div>
       </div>
       <div className={styles.bottom}>

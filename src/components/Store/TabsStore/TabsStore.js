@@ -51,7 +51,7 @@ const TabsStore = ({ search }) => {
               ))
             : order
                 .filter((val) => {
-                  if (search == "") {
+                  if (search === "") {
                     return val;
                   } else if (val.number.includes(search)) {
                     return val;
