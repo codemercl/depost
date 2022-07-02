@@ -1,24 +1,23 @@
-import "./App.scss";
-import Store from "./components/Store/Store";
-import Notfound from "./components/Notfound/Notfound";
-import Layout from "./components/Layout/Layout";
-import Login from "./components/Login/Login";
-import { Routes, Route } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
-import { PageTransition } from "./hook/PageTransition"
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <div className="mobile">
-      <AnimatePresence>
-        <Routes>
-        <Route exact path="/board" element={<Login PageTransition={PageTransition}/>} />
-          <Route element={<Layout />}>
-            <Route exact path="/store" element={<Store PageTransition={PageTransition} />} />
-            <Route exact path="*" element={<Notfound PageTransition={PageTransition} />} />
-          </Route>
-        </Routes>
-      </AnimatePresence>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
